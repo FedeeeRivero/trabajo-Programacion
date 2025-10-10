@@ -1,5 +1,5 @@
-const express = require('express')
-const { Dbfalsa } = require('./db_falsa')
+import express from 'express'
+import { Dbfalsa } from './db_falsa.js'
 const app = express()
 const port = 3000
 const db=new Dbfalsa()

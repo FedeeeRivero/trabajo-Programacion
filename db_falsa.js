@@ -1,6 +1,6 @@
-import { Actores } from "./actores"
-import { peliculas } from "./pelicula"
-import { Premio } from "./premio"
+import { Actores } from "./actores.js"
+import { peliculas } from "./pelicula.js"
+import { Premio } from "./premio.js"
 
 export class Dbfalsa{
     peliculas=[new peliculas(1,"300","Accion",[1],[1,2]),new peliculas (2,"metegol","Deportes",[1],[]),new peliculas(3,"after","romance",[2,3],[3])]
@@ -11,8 +11,12 @@ export class Dbfalsa{
         let pelis=this.peliculas
         pelis=pelis.map((peli)=>{
             peli.actores=peli.actores.map((id)=>{
-                this.actores.filter(id)
+                return this.actores.find(actor=> actor.id==id)
             })
+            peli.premios=peli.premios.map((id)=>{
+                return this.premios.find(premio => premio.id==id)
+            })
+            return peli
         })
         return pelis
     }
