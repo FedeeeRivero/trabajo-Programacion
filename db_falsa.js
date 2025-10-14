@@ -25,11 +25,33 @@ export class Dbfalsa{
         let actores=this.actores
         actores=actores.map((actor)=>{
             actor.peliculas=actor.peliculas.map((id)=>{
-                return this.peliculas.find(peli=> peli.id==id)
+                return this.peliculas.find(peli => peli.id==id)
             })
-           
             return actor
         })
         return actores
     }
+        recuperarPremios() {
+        let premios=this.premios
+        premios=premios.map((premio)=>{
+           premio.pelicula=this.peliculas.filter(peli=>peli.id==premio.id_pelicula) 
+           
+            return premio
+        })
+        return premios
+    }
+
+    recuperarPremio(id){
+        return this.premios.filter(premio=>premio.id==id)
+    }
+
+     recuperarPeli(id){
+        return this.peliculas.filter(peli=>peli.id==id)
+    }
+
+    recuperarActor(id){
+        return this.actores.filter(actor=>actor.id==id)
+    }
+
+
 }

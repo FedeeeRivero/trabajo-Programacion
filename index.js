@@ -17,6 +17,32 @@ app.get('/actores', (req, res) => {
 })
 
 
+app.get('/premios', (req, res) => {
+  res.send(db.recuperarPremios())
+})
+
+app.get('/premios/:id', (req, res) => {
+  res.send(db.recuperarPremio(req.params.id))
+})
+
+
+app.get('/peliculas/:id', (req, res) => {
+  res.send(db.recuperarPeli(req.params.id))
+})
+
+app.get('/actores/:id', (req, res) => {
+  res.send(db.recuperarActor(req.params.id))
+})
+
+
+
+
+
+
+
+
+
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
