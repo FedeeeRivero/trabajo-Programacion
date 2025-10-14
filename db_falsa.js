@@ -20,4 +20,16 @@ export class Dbfalsa{
         })
         return pelis
     }
+
+    recuperarActores() {
+        let actores=this.actores
+        actores=actores.map((actor)=>{
+            actor.peliculas=actor.peliculas.map((id)=>{
+                return this.peliculas.find(peli=> peli.id==id)
+            })
+           
+            return actor
+        })
+        return actores
+    }
 }
