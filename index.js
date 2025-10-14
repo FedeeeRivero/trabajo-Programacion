@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
   res.send('Hello mundo!')
 })
 
-app.get('/pelis', (req, res) => {
+app.get('/peliculas', (req, res) => {
   res.send(db.recuperarPelis())
 })
 
@@ -34,8 +34,21 @@ app.get('/actores/:id', (req, res) => {
   res.send(db.recuperarActor(req.params.id))
 })
 
+app.delete('/actores/:id', (req, res) => {
+  res.send(db.borrarActor(req.params.id))
+})
 
 
+app.delete('/premios/:id', (req, res) => {
+  res.send(db.borrarPremio(req.params.id))
+
+})
+
+
+app.delete('/peliculas/:id', (req, res) => {
+  res.send(db.borrarPeli(req.params.id))
+  
+})
 
 
 

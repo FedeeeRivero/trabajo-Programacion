@@ -53,5 +53,24 @@ export class Dbfalsa{
         return this.actores.filter(actor=>actor.id==id)
     }
 
+    borrarActor(id){
+        this.actores=this.actores.filter(actor=>actor.id!=id)
+        return "actor borrado"
+    }
+
+     borrarPremio(id){
+        this.premios=this.premios.filter(premio=>premio.id!=id)
+        return "premio borrado"
+    }
+
+    borrarPeli(id){
+        this.peliculas=this.peliculas.filter(peli=>peli.id!=id)
+        return "peliculas borrado"
+    }
+
+
+
+
+
 
 }
