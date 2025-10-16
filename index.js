@@ -4,6 +4,8 @@ const app = express()
 const port = 3000
 const db=new Dbfalsa()
 
+app.use(express.json())
+
 app.get('/', (req, res) => {
   res.send('Hello mundo!')
 })
@@ -50,6 +52,9 @@ app.delete('/peliculas/:id', (req, res) => {
   
 })
 
+app.post("/peliculas", (req, res) => {
+  res.send(db.crearPeli(req.body))
+})
 
 
 
@@ -58,4 +63,7 @@ app.delete('/peliculas/:id', (req, res) => {
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
+
+  
 })
+

@@ -68,9 +68,18 @@ export class Dbfalsa{
         return "peliculas borrado"
     }
 
+    crearPeli(datos){
+        
+        //const peli= new peliculas (this.peliculas.length+1, datos.titulo,datos.genero,datos.actores,datos.premios)
+        //this.peliculas.push(peli)
+        console.log(datos)
+        //return peli
+        
+    }
 
 
 
 
 
-}
+
+} 
