@@ -5,7 +5,7 @@ const port = 3000
 const db=new Dbfalsa()
 
 app.use(express.json())
-
+app.use(express.urlencoded({ extended: true }))
 app.get('/', (req, res) => {
   res.send('Hello mundo!')
 })
@@ -53,7 +53,20 @@ app.delete('/peliculas/:id', (req, res) => {
 })
 
 app.post("/peliculas", (req, res) => {
+    
   res.send(db.crearPeli(req.body))
+})
+
+
+app.post("/actores", (req, res) => {
+    
+  res.send(db.crearActor(req.body))
+})
+
+app.post("/premios", (req, res) => {
+   
+
+  res.send(db.crearPemio(req.body))
 })
 
 

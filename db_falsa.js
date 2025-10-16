@@ -1,3 +1,4 @@
+import { act } from "react"
 import { Actores } from "./actores.js"
 import { peliculas } from "./pelicula.js"
 import { Premio } from "./premio.js"
@@ -70,11 +71,27 @@ export class Dbfalsa{
 
     crearPeli(datos){
         
-        //const peli= new peliculas (this.peliculas.length+1, datos.titulo,datos.genero,datos.actores,datos.premios)
-        //this.peliculas.push(peli)
+        const peli= new peliculas (this.peliculas.length+1, datos.titulo,datos.genero,datos.actores,datos.premios)
+        this.peliculas.push(peli)
         console.log(datos)
-        //return peli
+        return peli
         
+    }
+
+    crearActor(datos){
+         const actor= new Actores (this.actores.length+1,datos.nombre,datos.apellido,datos.fecha_nacimiento,datos.peliculas)
+        this.actores.push(actor)
+
+        return actor
+        
+
+    }
+
+    crearPremio(datos){
+         const premio= new Premio (this.premios.length+1,datos.nombre,datos.fecha,datos.id_peliculas)
+        this.premios.push(premio)
+
+        return premio
     }
 
 
