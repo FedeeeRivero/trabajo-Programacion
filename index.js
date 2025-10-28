@@ -66,7 +66,16 @@ app.post("/actores", (req, res) => {
 app.post("/premios", (req, res) => {
    
 
-  res.send(db.crearPemio(req.body))
+  res.send(db.crearPremio(req.body))
+
+  
+})
+
+
+app.put("/actor/:id", (req, res) => {
+   
+
+  res.send(db.modificacionActor(req.body,req.params.id))
 })
 
 

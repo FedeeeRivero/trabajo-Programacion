@@ -1,4 +1,4 @@
-import { act } from "react"
+
 import { Actores } from "./actores.js"
 import { peliculas } from "./pelicula.js"
 import { Premio } from "./premio.js"
@@ -92,6 +92,21 @@ export class Dbfalsa{
         this.premios.push(premio)
 
         return premio
+    }
+
+    modificacionActor(body,id){
+
+        const encontrado = this.actores.filter(actor=>actor.id==id)[0]
+       
+        encontrado.nombre=body.nombre
+        encontrado.apellido=body.apellido
+        encontrado.fecha_nacimiento=body.fecha_nacimiento
+        
+        return encontrado
+        
+        
+      
+        
     }
 
 
