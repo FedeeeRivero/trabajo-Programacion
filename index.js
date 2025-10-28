@@ -78,6 +78,24 @@ app.put("/actor/:id", (req, res) => {
   res.send(db.modificacionActor(req.body,req.params.id))
 })
 
+app.put("/peliculas/:id", (req, res) => {
+   
+
+  res.send(db.modificacionPeli(req.body,req.params.id))
+
+})
+
+
+app.put("/premios/:id", (req, res) => {
+   
+
+  res.send(db.modificacionPremio(req.body,req.params.id))
+
+})
+
+
+
+
 
 
 
