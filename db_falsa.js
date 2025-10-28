@@ -12,15 +12,15 @@ export class Dbfalsa{
 
 
     recuperarPelis() {
-        let pelis = this.peliculas.map((peli) => {
-            const peliCopia = { ...peli };
-            peliCopia.actores = peli.actores.map((id) => {
-                return this.actores.find(actor => actor.id == id);
-            });
-            peliCopia.premios = peli.premios.map((id) => {
-                return this.premios.find(premio => premio.id == id);
-            });
-            return peliCopia;
+     let pelis = this.peliculas.map((peli) => {
+      const peliCopia = { ...peli };
+    peliCopia.actores = peli.actores.map((id) => {
+    return this.actores.find(actor => actor.id == id);
+     });
+     peliCopia.premios = peli.premios.map((id) => {
+      return this.premios.find(premio => premio.id == id);
+      });
+     return peliCopia;
         });
         return pelis;
     }
@@ -28,9 +28,9 @@ export class Dbfalsa{
 
     recuperarActores() {
         let actores = this.actores.map((actor) => {
-            const actorCopia = { ...actor };
-            actorCopia.peliculas = actor.peliculas.map((id) => {
-                return this.peliculas.find(peli => peli.id == id);
+      const actorCopia = { ...actor };
+      actorCopia.peliculas = actor.peliculas.map((id) => {
+         return this.peliculas.find(peli => peli.id == id);
             });
             return actorCopia;
         });
@@ -38,9 +38,9 @@ export class Dbfalsa{
     }
     recuperarPremios() {
         let premios = this.premios.map((premio) => {
-            const premioCopia = { ...premio };
-            premioCopia.pelicula = this.peliculas.filter(peli => peli.id == premio.id_pelicula);
-            return premioCopia;
+        const premioCopia = { ...premio };
+       premioCopia.pelicula = this.peliculas.filter(peli => peli.id == premio.id_pelicula);
+      return premioCopia;
         });
         return premios;
     }
